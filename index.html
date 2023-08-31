@@ -62,13 +62,13 @@
     async function getFriendship() {
       const friend = await liff.getFriendship()
       document.getElementById("friendship").append(friend.friendFlag)
-      if(!friendFlag){
-if(confirm("คุณยังไม่ได้เพิ่ม Bot เป้นเพื่อน จะเพิ่มไหม?")){
-  window.location= "http://line.me/R/ti/p/@659allxd"
+      if (!friend.friendFlag) {
+        if (confirm("คุณยังไม่ได้เพิ่ม Bot เป้นเพื่อน จะเพิ่มไหม?")) {
+          window.location = "https://liff.line.me/2000584908-KBxdQG3L"
 
-}
+        }
       }
-     }
+    }
 
     async function sendMsg() {
       if (liff.getContext().type !== "none") {
