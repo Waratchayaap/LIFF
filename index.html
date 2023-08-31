@@ -55,12 +55,15 @@
 
     function closed() { }
 
-    async function scanCode() { }
+    async function scanCode() {
+      const result = await liff.scanCode()
+      document.getElementById("scanCode").append(result.value)
+    }
 
-    function openWindow() { 
+    function openWindow() {
       liff.openWindow({
         url: "https://line.me",
-        external:true
+        external: true
       })
     }
 
@@ -72,9 +75,9 @@
           window.location = "https://line.me/R/ti/p/@908tyclt"
         }
 
-        }
       }
-    
+    }
+
 
     async function sendMsg() {
       if (liff.getContext().type !== "none") {
