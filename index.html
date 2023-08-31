@@ -63,7 +63,14 @@
 
     async function sendMsg() { }
 
-    function getContext() { }
+    function getContext() { 
+      document.getElementById("type").append(liff.getContext().type)
+      document.getElementById("viewType").append(liff.getContext().viewType)
+      document.getElementById("utouId").append(liff.getContext().utouId)
+      document.getElementById("roomId").append(liff.getContext().roomId)
+      document.getElementById("groupId").append(liff.getContext().groupId)
+
+    }
 
     async function getUserProfile() {
       const profile = await liff.getProfile()
@@ -94,7 +101,7 @@
       await liff.init({ liffId: "2000584908-KBxdQG3L" });
       getEnvironment();
       getUserProfile()
-      // getContext()
+      getContext()
       // getFriendship()
       // createUniversalLink()
     }
