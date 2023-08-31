@@ -53,7 +53,7 @@
       async function shareMsg() {}
 
       function logOut() {
-        liff.logOut();
+        liff.logOut()
         window.location.reload()
       }
 
@@ -69,7 +69,7 @@
       function openWindow() {
         liff.openWindow({
           url: "https://line.me",
-          external: true,
+          external: true
         });
       }
 
@@ -87,9 +87,9 @@
         if (liff.getContext().type !== "none") {
           await liff.sendMessages([
             {
-              type: "sticker",
-              stickerId: 1,
-              packageId: 1,
+              "type": "sticker",
+             "stickerId": 1,
+              "packageId": 1
             },
           ]);
           alert("Message sent")
