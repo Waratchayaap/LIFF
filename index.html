@@ -61,20 +61,20 @@
 
     async function getFriendship() { }
 
-    async function sendMsg() { 
-      if(liff.getContext().type !== "none"){
+    async function sendMsg() {
+      if (liff.getContext().type !== "none") {
         await liff.sendMessages([
           {
             "type": "sticker",
-            "stickerId":1,
-            "packageId":1
+            "stickerId": 1,
+            "packageId": 1
           }
         ])
         alert("Message sent")
       }
     }
 
-    function getContext() { 
+    function getContext() {
       document.getElementById("type").append(liff.getContext().type)
       document.getElementById("viewType").append(liff.getContext().viewType)
       document.getElementById("utouId").append(liff.getContext().utouId)
@@ -88,8 +88,8 @@
       document.getElementById("pictureUrl").src = profile.pictureUrl
       document.getElementById("userId").append(profile.userId)
       document.getElementById("statusMessage").append(profile.statusMessage)
-      document.getElementById("displayName").append(profile.displayName )
-      document.getElementById("decodedIDToken").append(liff.getDecodedIDToken().email )
+      document.getElementById("displayName").append(profile.displayName)
+      document.getElementById("decodedIDToken").append(liff.getDecodedIDToken().email)
 
     }
 
