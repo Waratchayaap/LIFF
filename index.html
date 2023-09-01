@@ -48,13 +48,20 @@
 
     <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
     <script>
-      function createUniversalLink() {}
+      function createUniversalLink() {
+        const link1 =liff.permanentLink.createUrl()
+        document.getElementById("universalLink1").append(link1)
+
+        liff.permanentLink.setExtraQueryParam('para9')
+        const link2 =liff.permanentLink.createUrl()
+        document.getElementById("universalLink2").append(link2)
+      }
 
       async function shareMsg() {
         await liff.shareTargetPicker([
           {
-"type":"text",
-"text": "This nessage was sent by shareTargetPicker"
+          "type":"text",
+          "text": "This nessage was sent by shareTargetPicker"
         }
       ])
       }
