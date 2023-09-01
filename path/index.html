@@ -14,11 +14,32 @@
   <p id="displayName"><b>displayName:</b> </p>
   <p id="statusMessage"><b>statusMessage:</b> </p>
   <p id="decodedIDToken"><b>email:</b> </p>
+
   <script>
     // Query Params
     const queryString = decodeURIComponent(window.location.search);
     const params = new URLSearchParams(queryString);
     document.getElementById("param").append(params.get("param"));
   </script>
+
+<script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+<script>
+  async function getUserProfile(){
+    const profile = await liff.getProfile()
+    document.getElementById("pictureUrl").src = profile.pictureUrl
+    document.getElementById("userId").append(profile.userId)
+    document.getElementById("statusMessage").append(profile.statusMessage)
+    document.getElementById("displayName").append(profile.displayName)
+    document.getElementById("decodedIDToken").append(liff.getDecodedIDToken().email)
+  }
+  async function main() {
+        await liff.init({ liffId: "2000584908-KBxdQG3L" })
+        if (liff.isLoggedIn()) {
+          getUserProfile()
+        } else {
+          liff.login({ redirecUrl:"https://waratchayaap.github.io/LIFF/"})
+        }
+      }
+</script>
 </body>
 </html>
