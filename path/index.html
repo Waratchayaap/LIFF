@@ -24,14 +24,16 @@
 
 <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
 <script>
-  async function getUserProfile(){
-    const profile = await liff.getProfile()
-    document.getElementById("pictureUrl").src = profile.pictureUrl
-    document.getElementById("userId").append(profile.userId)
-    document.getElementById("statusMessage").append(profile.statusMessage)
-    document.getElementById("displayName").append(profile.displayName)
-    document.getElementById("decodedIDToken").append(liff.getDecodedIDToken().email)
-  }
+   async function getUserProfile() {
+        const profile = await liff.getProfile()
+        document.getElementById("pictureUrl").src = profile.pictureUrl
+        document.getElementById("userId").append(profile.userId)
+        document.getElementById("statusMessage").append(profile.statusMessage)
+        document.getElementById("displayName").append(profile.displayName)
+        document
+          .getElementById("decodedIDToken")
+          .append(liff.getDecodedIDToken().email)
+      }
   async function main() {
         await liff.init({ liffId: "2000584908-KBxdQG3L" })
         if (liff.isLoggedIn()) {
@@ -40,6 +42,7 @@
           liff.login({ redirectUrl:"https://waratchayaap.github.io/LIFF/path"})
         }
       }
+      main()
 </script>
 </body>
 </html>
